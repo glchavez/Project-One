@@ -1,5 +1,6 @@
 console.log("Connection successful");
 
+
 // When predefined list of alcohols are presented to user...
     // User selects an alcohol
         // User search selection is stored in local storage
