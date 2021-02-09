@@ -1,6 +1,5 @@
 // Global variables to set...
-// var: name of alcohol that is selected
-// var: multiple of these to link with list of predefined alcohols in html
+// var: multiple of these to link with html elements that will hold the API data and display on website
 
 // functions to use...
 // .on("click") for alcohol selection
@@ -15,19 +14,17 @@ $("#alcohol-search").on("click", function getAlcoholData (event) {
     // localStorage.setItem("alcohol", alcoholName);
     // createSearchHistory(alcoholName);
 
-    searchDrinks(alcoholName);
+    searchRecipePup(alcoholName);
+    searchSpoon(alcoholName);
 });
 
 
 // .fetch() for drink recipes
 // Parameters will be...
 // user selected alcohol
-// Will display selected info on screen...
-// 
-// local var: creation of html elements for poplated info from API
-function searchDrinks(alcohol) {
+function searchRecipePup(alcohol) {
 
-    fetch('http://www.recipepuppy.com/api/?i=' + alcohol, {
+    fetch('http://www.recipepuppy.com/api/?i=' + alcohol + '&q=meal', {
         credentials: 'same-origin',
         headers: {
             'Accept': 'application/json',
@@ -40,8 +37,6 @@ function searchDrinks(alcohol) {
         })
         .then(function (data) {
             console.log(data);
-
-            searchFood(alcohol);
         })
 };
 
@@ -49,12 +44,9 @@ function searchDrinks(alcohol) {
 // .fetch() for food recipes
 // Parameters will be...
 // User selected alcohol
-// Will display selected info on screen...
-// 
-// local var: creation of html elements for poplated info from API
-function searchFood(alcohol) {
+function searchSpoon(alcohol) {
 
-    fetch('https://api.spoonacular.com/recipes/complexSearch?includeIngredients=' + alcohol + '&fillIngredients=true&addRecipeInformation=true&number=10&apiKey=ead0fc7909d64d048c3a9e73cccc830f')
+    fetch('https://api.spoonacular.com/recipes/complexSearch?type=drink&addRecipeInformation=true&includeIngredients=' + alcohol + '&apiKey=ead0fc7909d64d048c3a9e73cccc830f')
 
         .then(function (response) {
             return response.json();
@@ -65,19 +57,17 @@ function searchFood(alcohol) {
 };
 
 
-// function() to display photo of selected alcohol on screen from images folder 
-// function displayImage() {
+// function() to display photo of selected alcohol on screen
+    // function displayImage() {
 
-// };
+    // };
 
 
-// function() to retreive local storage of alcohol name if page is reloaded/closed and opened again
-    // .getItem()
-
+// function() for search history displayal on screen
     // function retreiveAlcoholType() {
 
     //     localStorage.getItem("");
     // };
 
 
-// function() to clear the previous name of alcohol name entered in the global var: name of alcohol that is selected
+// function() to clear previous displayed API info so that the new search API info can take its place on the website
