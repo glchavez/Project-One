@@ -64,3 +64,23 @@ h1 {
         grid-column-start: 1;
     grid-column-end: 4;
   }
+
+  .thumbnail, img {
+    height:300px;
+    width:75%;
+    position: relative;
+    left: 12%;
+}
+
+.card-section {
+text-align: center;
+
+}
+
+.card {
+
+  width: 75%;
+  position: relative;
+  left: 12%;
+  
+}
