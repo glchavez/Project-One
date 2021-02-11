@@ -11,8 +11,8 @@ $("#alcohol-search").on("click", function getAlcoholData (event) {
 
     var alcoholName = $("#alcohol-name").val();
 
-    // localStorage.setItem("alcohol", alcoholName);
-    // createSearchHistory(alcoholName);
+    localStorage.setItem("alcohol", alcoholName);
+    createSearchHistory(alcoholName);
 
     searchRecipePup(alcoholName);
     searchSpoon(alcoholName);
@@ -64,10 +64,28 @@ function searchSpoon(alcohol) {
 
 
 // function() for search history displayal on screen
-    // function retreiveAlcoholType() {
+if (localStorage.getItem("alcohol")) {
+    createSearchHistory(localStorage.getItem("alcohol"));
+};
 
-    //     localStorage.getItem("");
-    // };
+function createSearchHistory(city) {
+
+    var historyBtn = $("<li>", {"class": "button"}).text(city);
+    $("#history-search-btn").prepend(historyBtn);
+};
+
+// runs API's and displays results on screen when history button is clicked
+$("#history-search-btn").click(function (event) {
+
+    // clearCurrent();
+    localStorage.setItem("alcohol", event.target.textContent);
+
+    searchRecipePup(event.target.textContent);
+    searchSpoon(event.target.textContent);
+});
 
 
 // function() to clear previous displayed API info so that the new search API info can take its place on the website
+    // function clearCurrent() {
+
+    // };
