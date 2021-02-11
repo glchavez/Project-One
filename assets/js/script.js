@@ -24,7 +24,7 @@ $("#alcohol-search").on("click", function getAlcoholData (event) {
 // user selected alcohol
 function searchRecipePup(alcohol) {
 
-    fetch('http://www.recipepuppy.com/api/?i=' + alcohol + '&q=meal', {
+    fetch('https://www.recipepuppy.com/api/?i=' + alcohol + '&q=meal', {
         credentials: 'same-origin',
         headers: {
             'Accept': 'application/json',
