@@ -32,23 +32,25 @@ $('#alcohol-search').on('click', function getAlcoholData (event) {
 // .fetch() for drink recipes
 // Parameters will be...
 // user selected alcohol
-// function searchRecipePup(alcohol) {
 
-//     fetch('http://www.recipepuppy.com/api/?i=' + alcohol + '&q=meal', {
-//         credentials: 'same-origin',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json',
-//         },
-//     })
 
-//         .then(function (response) {
-//             return response.json();
-//         })
-//         .then(function (data) {
-//             console.log(data);
-//         })
-//     }
+function searchRecipePup(alcohol) {
+
+    fetch("https://recipe-puppy.p.rapidapi.com/?i=" + alcohol + "&q=meal", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "75390b3d46msh2c16eb458cf4e24p18568ejsn950ca0042bd5",
+            "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"
+        }
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        })
+};
+
 
 // .fetch() for food recipes
 // Parameters will be...
@@ -64,20 +66,6 @@ $('#alcohol-search').on('click', function getAlcoholData (event) {
 //             console.log(foodData);
 //         })
 // };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // function() to display photo of selected alcohol on screen
 function getAlcoholImage (alcohol) {
@@ -103,9 +91,43 @@ function getAlcoholImage (alcohol) {
       
 }
 
+    fetch('https://api.spoonacular.com/recipes/complexSearch?type=drink&addRecipeInformation=true&includeIngredients=' + alcohol + '&apiKey=517baad9a7fa4dd49bccfef5a31fab4b')
+
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (drinkData) {
+            console.log(drinkData);
+
+
+            console.log(drinkData.results[0].title);
+
+// for loop to display drink recipe results
+
+            for (var i = 0; i < drinkData.results.length; i++) {
+                var drinkResults = $("<li>").text(drinkData.results[i].title)
+                $("#drink-results").append(drinkResults)
+
+                console.log(drinkResults);
+
+
+            }
+        })
+
+
+};
+
+
+// function() to display photo of selected alcohol on screen
+// function displayImage() {
+
+// };
 
 
 
+    var historyBtn = $("<li>", { "class": "button" }).text(city);
+    $("#history-search-btn").prepend(historyBtn);
+};
 
 //   // fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + alcohol)
 //   fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + alcohol + '')
