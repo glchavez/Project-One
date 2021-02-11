@@ -52,7 +52,23 @@ function searchSpoon(alcohol) {
         })
         .then(function (drinkData) {
             console.log(drinkData);
+
+
+            console.log(drinkData.results[0].title);
+
+// for loop to display drink recipe results
+
+            for (var i = 0; i < drinkData.results.length; i++) {
+                var drinkResults = $("<li>").text(drinkData.results[i].title)
+                $("#drink-results").append(drinkResults)
+
+                console.log(drinkResults);
+
+
+            }
         })
+
+
 };
 
 
