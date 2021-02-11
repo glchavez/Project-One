@@ -4,7 +4,7 @@
 // functions to use...
 // .on("click") for alcohol selection
 // .setItem() for alcohol selection into local storage
-$("#alcohol-search").on("click", function getAlcoholData (event) {
+$("#alcohol-search").on("click", function getAlcoholData(event) {
 
     // clearCurrent();
     event.preventDefault();
@@ -24,14 +24,13 @@ $("#alcohol-search").on("click", function getAlcoholData (event) {
 // user selected alcohol
 function searchRecipePup(alcohol) {
 
-    fetch('https://www.recipepuppy.com/api/?i=' + alcohol + '&q=meal', {
-        credentials: 'same-origin',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
+    fetch("https://recipe-puppy.p.rapidapi.com/?i=" + alcohol + "&q=meal", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "75390b3d46msh2c16eb458cf4e24p18568ejsn950ca0042bd5",
+            "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"
+        }
     })
-
         .then(function (response) {
             return response.json();
         })
@@ -46,21 +45,21 @@ function searchRecipePup(alcohol) {
 // User selected alcohol
 function searchSpoon(alcohol) {
 
-    fetch('https://api.spoonacular.com/recipes/complexSearch?type=drink&addRecipeInformation=true&includeIngredients=' + alcohol + '&apiKey=ead0fc7909d64d048c3a9e73cccc830f')
+    fetch('https://api.spoonacular.com/recipes/complexSearch?type=drink&addRecipeInformation=true&includeIngredients=' + alcohol + '&apiKey=517baad9a7fa4dd49bccfef5a31fab4b')
 
         .then(function (response) {
             return response.json();
         })
-        .then(function (foodData) {
-            console.log(foodData);
+        .then(function (drinkData) {
+            console.log(drinkData);
         })
 };
 
 
 // function() to display photo of selected alcohol on screen
-    // function displayImage() {
+// function displayImage() {
 
-    // };
+// };
 
 
 // function() for search history displayal on screen
@@ -70,7 +69,7 @@ if (localStorage.getItem("alcohol")) {
 
 function createSearchHistory(city) {
 
-    var historyBtn = $("<li>", {"class": "button"}).text(city);
+    var historyBtn = $("<li>", { "class": "button" }).text(city);
     $("#history-search-btn").prepend(historyBtn);
 };
 
