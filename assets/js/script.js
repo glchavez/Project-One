@@ -88,3 +88,4 @@ $("#history-search-btn").click(function (event) {
     // function clearCurrent() {
 
     // };
+    
