@@ -43,6 +43,19 @@ function searchRecipePup(alcohol) {
     })
     .then(function (data) {
       console.log(data);
+
+
+      // for loop to display recipe puppy results
+      for (var i = 0; i < data.results.length; i++) {
+        var puppyResults = $("<a>").text(data.results[i].title);
+        var list = $("<br>")
+        var link = data.results[i].href;
+        console.log(data.results[i].href);
+        puppyResults.attr("href", link)
+        puppyResults.attr("target", "_blank")
+        $("#drink-results").append(puppyResults, list)
+
+      }
     });
 };
 
@@ -50,20 +63,25 @@ function searchRecipePup(alcohol) {
 // function() to run spoonacular API and display recipes on screen
 function searchSpoon(alcohol) {
 
-fetch('https://api.spoonacular.com/recipes/complexSearch?type=drink&addRecipeInformation=true&includeIngredients=' + alcohol + '&apiKey=517baad9a7fa4dd49bccfef5a31fab4b')
+  fetch('https://api.spoonacular.com/recipes/complexSearch?type=drink&addRecipeInformation=true&includeIngredients=' + alcohol + '&apiKey=517baad9a7fa4dd49bccfef5a31fab4b')
 
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (drinkData) {
-    console.log(drinkData);
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (drinkData) {
+      console.log(drinkData);
 
-    // for loop to display drink recipe results
-    for (var i = 0; i < drinkData.results.length; i++) {
-      var drinkResults = $("<li>", {"class": "remove-li"}).text(drinkData.results[i].title);
-      $("#drink-results").append(drinkResults);
-    };
-  });
+      // for loop to display drink recipe results
+      for (var i = 0; i < drinkData.results.length; i++) {
+        var drinkResults = $("<a>").text(drinkData.results[i].title);
+        var spoonList = $("<br>");
+        var spoonLink = drinkData.results[i].sourceUrl;
+        drinkResults.attr("href", spoonLink)
+        drinkResults.attr("target", "_blank")
+        $("#drink-results").append(drinkResults, spoonList);
+
+      }
+    });
 };
 
 
@@ -76,8 +94,8 @@ if (localStorage.getItem("alcohol")) {
 // function() to create search history on screen as new alcohol names are searched
 function createSearchHistory(city) {
 
-var historyBtn = $("<li>", { "class": "button" }).text(city);
-$("#history-search-btn").prepend(historyBtn);
+  var historyBtn = $("<li>", { "class": "button" }).text(city);
+  $("#history-search-btn").prepend(historyBtn);
 };
 
 
