@@ -47,7 +47,7 @@ function searchRecipePup(alcohol) {
 
       // for loop to display recipe puppy results
       for (var i = 0; i < data.results.length; i++) {
-        var puppyResults = $("<a>").text(data.results[i].title);
+        var puppyResults = $("<a>", {"class": "remove-a"}).text(data.results[i].title);
         var list = $("<br>")
         var link = data.results[i].href;
         console.log(data.results[i].href);
@@ -73,7 +73,7 @@ function searchSpoon(alcohol) {
 
       // for loop to display drink recipe results
       for (var i = 0; i < drinkData.results.length; i++) {
-        var drinkResults = $("<a>").text(drinkData.results[i].title);
+        var drinkResults = $("<a>", {"class": "remove-a"}).text(drinkData.results[i].title);
         var spoonList = $("<br>");
         var spoonLink = drinkData.results[i].sourceUrl;
         drinkResults.attr("href", spoonLink)
@@ -114,5 +114,6 @@ $('#history-search-btn').click(function (event) {
 // function() to clear previous displayed API info so that the new search API info can take its place on the website
 function clearCurrent() {
 
-  $("li").remove(".remove-li");
+  $("a").remove(".remove-a");
+  $("br").remove();
 };

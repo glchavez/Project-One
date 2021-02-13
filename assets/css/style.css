@@ -1,5 +1,6 @@
 h1 {
     background-color: orange;
+    padding-left: 15px;
 }
 
 .holy-grail-grid {
@@ -68,13 +69,15 @@ h1 {
 
   .product-image-gallery {
     padding: 1.5rem;
+    height: 250px;
+    width: 250px;
   }
   
   .thumbnail {
     height:250px;
-    width:75%;
+    width:90%;
     position: relative;
-    left: 12%;
+    left: 5%;
 }
 
 .card-section {
