@@ -1,7 +1,7 @@
 // Takes input from search button and runs API's with input value. Updates local storage value with new input value
 $('#alcohol-search').on('click', function getAlcoholData(event) {
-
-  // clearCurrent();
+  
+  clearCurrent();
   event.preventDefault();
 
   var alcoholName = $('#alcohol-name').val();
@@ -17,24 +17,14 @@ $('#alcohol-search').on('click', function getAlcoholData(event) {
 
 // function() to run cocktaildb API and display photo of selected alcohol on screen
 function getAlcoholImage(alcohol) {
-  var myHeaders = new Headers();
-  myHeaders.append("Cookie", "__cfduid=d6ca9d40b18797da336304f25e85fd21d1612407137");
 
-  var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-  };
+      // create img element in html
+      var imageResults = $("<img>", {"id": "alcohol-pic"});
+      $("#bottle").append(imageResults);
 
-  fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + alcohol, requestOptions)
-    .then(response => response.text())
-    .then(result => {
-      var data = JSON.parse(result);
-      console.log(data.drinks[0].strDrinkThumb);
-      var alcoholUrl = data.drinks[0].strDrinkThumb
-      $("#alcohol-pic").attr("src", alcoholUrl)
-    })
-    .catch(error => console.log('error', error));
+      // create src attribute in the img element
+      var alcoholUrl = 'https://www.thecocktaildb.com/images/ingredients/' + alcohol + '.png';
+      $("#alcohol-pic").attr("src", alcoholUrl);
 };
 
 
@@ -112,7 +102,7 @@ function createSearchHistory(city) {
 // runs API's and displays results on screen when search history button is clicked
 $('#history-search-btn').click(function (event) {
 
-  // clearCurrent();
+  clearCurrent();
   localStorage.setItem("alcohol", event.target.textContent);
 
   getAlcoholImage(event.target.textContent);
@@ -122,4 +112,7 @@ $('#history-search-btn').click(function (event) {
 
 
 // function() to clear previous displayed API info so that the new search API info can take its place on the website
-// function clearCurrent()
+function clearCurrent() {
+
+  $("li").remove(".remove-li");
+};
