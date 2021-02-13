@@ -65,8 +65,13 @@ h1 {
     grid-column-end: 4;
   }
 
-  .thumbnail, img {
-    height:300px;
+
+  .product-image-gallery {
+    padding: 1.5rem;
+  }
+  
+  .thumbnail {
+    height:250px;
     width:75%;
     position: relative;
     left: 12%;
@@ -74,13 +79,10 @@ h1 {
 
 .card-section {
 text-align: center;
-
 }
 
 .card {
-
   width: 75%;
   position: relative;
   left: 12%;
-  
 }
