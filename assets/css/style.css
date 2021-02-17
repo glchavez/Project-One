@@ -1,5 +1,5 @@
 h1 {
-    background-color: orange;
+    background-color: rgb(68, 227, 238);
     padding-left: 15px;
 }
 
@@ -65,7 +65,10 @@ h1 {
         grid-column-start: 1;
     grid-column-end: 4;
   }
-
+.site-logo  {
+  height: 15%;
+  width: 15%;
+}
 
   .product-image-gallery {
     padding: 1.5rem;
