@@ -1,6 +1,6 @@
 // Takes input from search button and runs API's with input value. Updates local storage value with new input value
 $('#alcohol-search').on('click', function getAlcoholData(event) {
-  
+
   clearCurrent();
   event.preventDefault();
 
@@ -18,13 +18,13 @@ $('#alcohol-search').on('click', function getAlcoholData(event) {
 // function() to run cocktaildb API and display photo of selected alcohol on screen
 function getAlcoholImage(alcohol) {
 
-      // create img element in html
-      var imageResults = $("<img>", {"id": "alcohol-pic"});
-      $("#bottle").append(imageResults);
+  // create img element in html
+  var imageResults = $("<img>", { "id": "alcohol-pic" });
+  $("#bottle").append(imageResults);
 
-      // create src attribute in the img element
-      var alcoholUrl = 'https://www.thecocktaildb.com/images/ingredients/' + alcohol + '.png';
-      $("#alcohol-pic").attr("src", alcoholUrl);
+  // create src attribute in the img element
+  var alcoholUrl = 'https://www.thecocktaildb.com/images/ingredients/' + alcohol + '.png';
+  $("#alcohol-pic").attr("src", alcoholUrl);
 };
 
 
@@ -47,7 +47,7 @@ function searchRecipePup(alcohol) {
 
       // for loop to display recipe puppy results
       for (var i = 0; i < data.results.length; i++) {
-        var puppyResults = $("<a>", {"class": "remove-a"}).text(data.results[i].title);
+        var puppyResults = $("<a>", { "class": "remove-a" }).text(data.results[i].title);
         var list = $("<br>")
         var link = data.results[i].href;
         console.log(data.results[i].href);
@@ -73,7 +73,7 @@ function searchSpoon(alcohol) {
 
       // for loop to display drink recipe results
       for (var i = 0; i < drinkData.results.length; i++) {
-        var drinkResults = $("<a>", {"class": "remove-a"}).text(drinkData.results[i].title);
+        var drinkResults = $("<a>", { "class": "remove-a" }).text(drinkData.results[i].title);
         var spoonList = $("<br>");
         var spoonLink = drinkData.results[i].sourceUrl;
         drinkResults.attr("href", spoonLink)
