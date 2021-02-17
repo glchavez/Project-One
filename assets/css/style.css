@@ -1,6 +1,12 @@
-h1 {
-  background-color: rgb(68, 227, 238);
-  padding-left: 15px;
+h2 {
+    background-color: rgba(68, 227, 238, 0.877);
+    padding-left: 15px;
+    border: black solid 2px;
+    text-align: center;
+}
+
+.top-bar, .top-bar ul {
+  background-color: black;
 }
 
 .holy-grail-grid {
