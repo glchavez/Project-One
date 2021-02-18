@@ -1,12 +1,21 @@
 h2 {
-    background-color: rgba(68, 227, 238, 0.877);
+    background-color: rgba(76, 221, 231, 0.788);
     padding-left: 15px;
-    border: black solid 2px;
+    border: black solid 1px;
     text-align: center;
 }
 
 .top-bar, .top-bar ul {
   background-color: black;
+}
+
+.button {
+  background-color: rgb(179, 175, 175);
+  border: rgb(112, 110, 110) solid 1px;
+}
+
+.button-spacing {
+  margin-right: 5px;
 }
 
 .holy-grail-grid {
