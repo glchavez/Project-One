@@ -94,7 +94,7 @@ if (localStorage.getItem("alcohol")) {
 // function() to create search history on screen as new alcohol names are searched
 function createSearchHistory(city) {
 
-  var historyBtn = $("<li>", { "class": "button rounded" }).text(city);
+  var historyBtn = $("<li>", { "class": "button rounded button-spacing" }).text(city);
   $("#history-search-btn").prepend(historyBtn);
 };
 

@@ -1,42 +1,49 @@
 # Concoctions App  (Project - One)
 
 
-This is a web application that allows you to enter a favorite type of alcohol in a search field and get back a variety of drink and food recipe selections incorporating that alcohol ingredient from multiple APIs.
+This web application allows you to enter a favorite type of alcohol in a search field and return a variety of drink and food recipe options, incorporating the user input of alcohol type from multiple API's.
 
-### Motivation:
+## User Story and Motivation:
 
-<i>User story</i> - Are you a food and enthusiast who also likes to try new things but doesnt want to sift through a ton of websites?...do you feel like you are stuck in a routine of always serving the same drinks or looking to liven up your next event with some creative options?  This app provides ll that and more in a single place.
+Are you a food and drink enthusiast who likes to try new things, but doesn't want to sift through a ton of websites for a desired recipe? Do you feel like you are stuck in a routine of serving the same drink or food item and are looking to liven up your next event with some creative options? Do you get frustrated googling your favorite type of alochol and getting back endless lists of blogs that you don't have time to read through?  
 
-We wanted to design an app that would appeal to a wide variety of people and multiple circumstances. broaden user horizons with a wider variety of ways to use the alcohol of your choice ...and create new interesting food and drink experiences.
+This app provides a solution to this repetitive routine and endless blog search results in a single place. Our app simplifies your search process, providing simple and quick informaton to narrow down results of food and drink recipes into a short list. This list provides links to the ingredients needed and instructions of how to make the drink or food item.
 
-Do you get frustrated googling your favorite drink or alochol and getting back endless lists of blgos that you dont have time to read through?  Our app simplifies your search process - to just give completely useful informaton - it sifts through the internet for you - to narrow down results ot food an drink recipe lists......
-endless opportunities to exapnd you drinking and eating horizeons.....and give you still more options to explore through these links to other useful recipe sites.
+We wanted to design an app that would appeal to a wide variety of people and multiple circumstances, broaden user horizons with a wider variety of ways to use the alcohol of their choice, and create exciting, new food and drink experiences.
 
-<b>Framework used:</b>
+<b>CSS Framework Used:</b>
 
-Foundation
+Foundations
 
-<b>API references:</b>
+<b>Technologies Used:</b>
 
-<li><ul>Spoonacular</ul> 
-<ul>Recipe Puppy </ul>
-<ul>Cocktail DB </ul>
-</li>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>jQuery</li>
+<li>VS Code</li>
+<li>Postman</li>
+</ul>
 
+<b>API References:</b>
 
-### App Details:
+<ul>
+<li>Spoonacular</li> 
+<li>Recipe Puppy </li>
+<li>Cocktail DB </li>
+</ul>
 
-<b>Description</b> - Application that pulls a list of food recipes with user inputed alcohol as an ingredient. Runs same operation with drink recipes. You get to select if you want drinks or food to appear in your search(one or the other).
-<ol>Wireframe - https://drive.google.com/file/d/1e2toM242yOffjQnCIl6N694XNcNHUKJw/view?usp=sharing</ol>
+## App Details:
 
-##how to use:
-Input an alcohol type - click search and it retuns a list of food and drink recipes using the ingredient provided - these are all clickable links to recipes in a variety of site.s
+Application that pulls a list of drink and food recipes with user inputed alcohol as an ingredient. This generated list provides links to the ingredients required and instructions to make the selected item. 
 
+On the bottom of the page, there are pre-populated food and drink items suggested by the app creators.
 
-#code example:
+![Application Page Layout](assets/images/website.png)
 
-
-
+## How to Use:
+Input an alcohol type, then click search and it retuns a list of food and drink recipes using the ingredient provided - these are all clickable links to recipes in a variety of sites.
 
 ## Links:
 
@@ -46,18 +53,11 @@ https://glchavez.github.io/Project-One/
 Repo: 
 https://github.com/glchavez/Project-One
 
-<b>Image of app: </b>
+## Future Development Ideas:
 
-
-
-
-
-
-
-### Future Development Ideas:
-
-<ol>Add sorting feature to separate drinks and food</ol>
-<ol>Add weather app and sort by drink temperatires o hot ande cold food</ol>
-<ol>Add links to highlighted distilleries or breweries, wineries etc for specific alcohol types</ol>
-<ol>Add random search feature to make the suggestions at the bottom changeable
-marketing links to various sponsored alcohol manufacturers?</ol>
+<ol>
+<li>Add sorting feature to separate drinks and food.</li>
+<li>Add weather app and suggest drink and food items that fit the current weather conditions.</li>
+<li>Add links to highlighted distilleries or breweries, wineries, etc for specific alcohol types.</li>
+<li>Add random search feature to make the suggestions at the bottom changeable marketing links to various sponsored alcohol manufacturers.</li>
+</ol>
