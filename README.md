@@ -61,3 +61,12 @@ https://github.com/glchavez/Project-One
 <li>Add links to highlighted distilleries or breweries, wineries, etc for specific alcohol types.</li>
 <li>Add random search feature to make the suggestions at the bottom changeable marketing links to various sponsored alcohol manufacturers.</li>
 </ol>
+
+## Contact Collaborators:
+
+<ul>
+<li>Giovany Chavez: giochavez320@gmail.com</li>
+<li>Keith Black: Keithblack4290@gmail.com</li>
+<li>Michael Lee: RipRunLife@gmail.com</li>
+<li>Kassandra Cruit: ksixbones@gmail.com</li>
+<ul>
